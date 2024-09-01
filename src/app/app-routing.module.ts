@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'configuracion',
     loadChildren: () => import('./configuracion/configuracion.module').then(m => m.ConfiguracionPageModule)
   },
+  {
+    path: 'buscador',
+    loadChildren: () => import('./buscador/buscador.module').then( m => m.BuscadorPageModule)
+  },
 ];
 
 @NgModule({

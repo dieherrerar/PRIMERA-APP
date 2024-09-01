@@ -1,0 +1,28 @@
+/* Estilos para el contenedor de inicio de sesión */
+#cajalogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    padding: 10; /* Espaciado alrededor del contenido */
+  }
+  
+  ion-card {
+    width: 100%;
+    max-width: 450px; /* Ancho máximo del card */
+    margin-bottom: 10%;
+    margin: 0%;
+  }
+  
+  ion-item.input-item {
+    margin-bottom: 15px; /* Espaciado entre los ítems */
+  }
+  
+
+  /* Estilos para el botón de inicio de sesión */
+  #botonlogin {
+    margin-top: 20px; /* Espaciado superior */
+    --color: #fff; /* Color del texto del botón */
+    --border-radius: 8px; /* Bordes redondeados del botón */
+  }
+  
