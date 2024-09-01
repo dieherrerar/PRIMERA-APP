@@ -3,14 +3,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
   },
   {
     path: 'login',
@@ -30,8 +26,35 @@ const routes: Routes = [
   },
   {
     path: 'buscador',
-    loadChildren: () => import('./buscador/buscador.module').then( m => m.BuscadorPageModule)
+    loadChildren: () => import('./buscador/buscador.module').then(m => m.BuscadorPageModule)
   },
+  {
+    path: 'publicacion/:id',
+    loadChildren: () => import('./publicacion/publicacion.module').then(m => m.PublicacionPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then(m => m.PerfilPageModule)
+  },
+  {
+    path: 'crearpublicacion',
+    loadChildren: () => import('./crearpublicacion/crearpublicacion.module').then(m => m.CrearpublicacionPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
+  }
+  ,
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  // Ruta para manejar páginas no encontradas (404)
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
 
 @NgModule({

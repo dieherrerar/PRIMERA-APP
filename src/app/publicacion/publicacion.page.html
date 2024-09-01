@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalles de Publicación</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Sección del Título -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ publicacion.title || 'Título de la Publicación' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Imagen de la Publicación -->
+      <img *ngIf="publicacion.image" [src]="publicacion.image" alt="Imagen de la Publicación" style="width: 100%; margin-top: 10px;" />
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección de Ingredientes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingredientes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ publicacion.ingredients || 'Ingredientes no disponibles' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección de Pasos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pasos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ publicacion.steps || 'Pasos no disponibles' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección de Video -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Video</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <video controls style="width: 100%; margin-top: 10px;">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botones de Acción -->
+  <ion-card>
+    <ion-card-content>
+      <ion-button expand="full" color="primary" (click)="likePublication()">Dar Like</ion-button>
+      <ion-button expand="full" (click)="savePublication()">Guardar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Comentario -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Comentario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="Escribe tu comentario" (keyup.enter)="submitComment()"></ion-input>
+      </ion-item>
+      <ion-button expand="full" color="primary" (click)="submitComment()">Enviar Comentario</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

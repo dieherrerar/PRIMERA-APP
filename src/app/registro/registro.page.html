@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="cajaregistro">
+  <ion-card class="form-card">
+    <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+      <ion-item>
+        <ion-input formControlName="nombre" type="text" placeholder="Escribe tu nombre de usuario"></ion-input>
+        <ion-note color="danger" *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+          El nombre es obligatorio.
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="usuario" type="email" placeholder="Ingrese tu correo electrónico"></ion-input>
+        <ion-note color="danger" *ngIf="registroForm.get('usuario')?.invalid && registroForm.get('usuario')?.touched">
+          <ng-container *ngIf="registroForm.get('usuario')?.hasError('required')">El correo electrónico es obligatorio.</ng-container>
+          <ng-container *ngIf="registroForm.get('usuario')?.hasError('email')">Ingrese un correo electrónico válido.</ng-container>
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="contrasenna" type="password" placeholder="Escriba su contraseña"></ion-input>
+        <ion-note color="danger" *ngIf="registroForm.get('contrasenna')?.invalid && registroForm.get('contrasenna')?.touched">
+          <ng-container *ngIf="registroForm.get('contrasenna')?.hasError('required')">La contraseña es obligatoria.</ng-container>
+          <ng-container *ngIf="registroForm.get('contrasenna')?.hasError('minlength')">La contraseña debe tener al menos 6 caracteres.</ng-container>
+        </ion-note>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" class="submit-button">
+        Crear una cuenta
+      </ion-button>
+    </form>
+  </ion-card>
+</ion-content>
+

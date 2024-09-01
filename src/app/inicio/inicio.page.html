@@ -1,7 +1,6 @@
-<!-- src/app/inicio/inicio.page.html -->
 <ion-app>
   <!-- Menú lateral -->
-  <ion-menu contentId="main-content">
+  <ion-menu contentId="main-content" type="overlay">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -10,13 +9,24 @@
     <ion-content class="ion-padding">
       <ion-list>
         <ion-item routerLink="/buscador" routerDirection="root">
+          <ion-icon name="search-outline" slot="start"></ion-icon>
           Buscador
         </ion-item>
         <ion-item routerLink="/acerca-de" routerDirection="root">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
           Acerca de
         </ion-item>
         <ion-item routerLink="/configuracion" routerDirection="root">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
           Configuración
+        </ion-item>
+        <ion-item routerLink="/crearpublicacion" routerDirection="root">
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          Crear Publicación
+        </ion-item>
+        <ion-item routerLink="/home" routerDirection="root">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          Cerrar sesión
         </ion-item>
       </ion-list>
     </ion-content>
@@ -35,24 +45,39 @@
 
     <ion-content class="ion-padding">
       <!-- Contenido de la página de inicio -->
-      <ion-content>
-        <div id="colored-box1">
-          <h2>Contenido en la caja</h2>
-          <p>Esta es una caja con fondo de color.</p>
-        </div>
+      <div id="colored-box1">
+        <h2>Contenido en la caja</h2>
+        <p>Esta es una caja con fondo de color.</p>
+      </div>
     
-        <div id="colored-box2">
-          <h2>Contenido en la caja</h2>
-          <p>Esta es una caja con fondo de color.</p>
-        </div>
-      </ion-content>
+      <div id="colored-box2">
+        <h2>Contenido en la caja</h2>
+        <p>Esta es una caja con fondo de color.</p>
+      </div>
     </ion-content>
   </ion-content>
+
+
+  <!--
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="perfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Mi Perfil</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="crear-publicacion">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-label>Crear Publicación</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="guardados">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-label>Guardados</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  -->
+
 </ion-app>
 
-
-
-
-  
   
 

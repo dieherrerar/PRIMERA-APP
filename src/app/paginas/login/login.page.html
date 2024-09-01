@@ -1,19 +1,13 @@
 <ion-app>
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title class="titulos">
-        Iniciar Sesión
-      </ion-title>
+      <ion-title>Iniciar Sesión</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content id="cajalogin">
     <ion-card>
       <ion-card-content>
-        <ion-item class="input-item">
-          <ion-input type="text" label="Nombre" [(ngModel)]="nombre" name="nombre" placeholder="Escribe tu nombre"></ion-input>
-        </ion-item>
-
         <ion-item class="input-item">
           <ion-input type="text" label="Usuario" [(ngModel)]="usuario" name="usuario" placeholder="Ingrese el usuario"></ion-input>
         </ion-item>
@@ -23,7 +17,11 @@
         </ion-item>
 
         <ion-button id="botonlogin" expand="block" class="login-button" (click)="ingresar()">
-          ENVIAR
+          INICIAR SESIÓN
+        </ion-button>
+        
+        <ion-button expand="block" color="secondary" (click)="navigateToRegister()">
+          Crear una cuenta
         </ion-button>
       </ion-card-content>
     </ion-card>

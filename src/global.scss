@@ -38,6 +38,10 @@
 
 
 
+ion-backdrop[inert] {
+    pointer-events: none;
+    opacity: 0;
+  }
 .parrafos{
     color: white;
     font-size: 15px;
