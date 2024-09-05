@@ -14,7 +14,7 @@
       <ion-card-title>Título de la Publicación</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-input [(ngModel)]="publication.title" name="title" placeholder="Ingresa el título de la publicación" required></ion-input>
+      <ion-input label="Titulo "[(ngModel)]="titulo" name="titulo" placeholder="Ingresa el título de la publicación" required></ion-input>
     </ion-card-content>
   </ion-card>
 
@@ -24,8 +24,7 @@
       <ion-card-title>Imagen de la Publicación</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <input type="file" (change)="onImageChange($event)" />
-      <img *ngIf="publication.image" [src]="publication.image" alt="Imagen de la Publicación" style="width: 100%; margin-top: 10px;" />
+      <input type="file" />
     </ion-card-content>
   </ion-card>
 
@@ -35,7 +34,7 @@
       <ion-card-title>Ingredientes</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-textarea [(ngModel)]="publication.ingredients" name="ingredients" rows="6" placeholder="Lista los ingredientes aquí" required></ion-textarea>
+      <ion-textarea label="Ingredientes"[(ngModel)]="ingredientes" name="ingredientes" placeholder="Lista los ingredientes aquí" required></ion-textarea>
     </ion-card-content>
   </ion-card>
 
@@ -45,7 +44,7 @@
       <ion-card-title>Pasos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-textarea [(ngModel)]="publication.steps" name="steps" rows="6" placeholder="Describe los pasos aquí" required></ion-textarea>
+      <ion-textarea label="Pasos" [(ngModel)]="pasos" name="pasos" placeholder="Describe los pasos aquí" required></ion-textarea>
     </ion-card-content>
   </ion-card>
 
@@ -55,13 +54,10 @@
       <ion-card-title>Video</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <input type="file" (change)="onVideoChange($event)" accept="video/*" />
-      <video *ngIf="publication.video" [src]="publication.video" controls style="width: 100%; margin-top: 10px;">
-        Your browser does not support the video tag.
-      </video>
+      <input type="file" accept="video/*" />
     </ion-card-content>
   </ion-card>
 
   <!-- Botón para guardar la publicación -->
-  <ion-button expand="full" color="primary" (click)="submitPublication()">Crear Publicación</ion-button>
+  <ion-button expand="full" color="primary" (click)="Publicar()">Crear Publicación</ion-button>
 </ion-content>

@@ -10,29 +10,38 @@
 
   <ion-content [fullscreen]="true">
 
-    <ion-card id="colored-box1">
+    <button id="button" (click) = "playA()" [routerLink]="['/acerca-de']">
+      <ion-card >
       <ion-card-content>
-        <ion-title><b>Accesibilidad</b></ion-title>
+        <ion-title>Accesibilidad</ion-title>
       </ion-card-content>
     </ion-card>
+    </button>
 
-    <ion-card id="colored-box1">
-      <ion-card-content>
-        <ion-title><b>Privacidad</b></ion-title>
-      </ion-card-content>
-    </ion-card>
 
-    <ion-card id="colored-box1">
-      <ion-card-content>
-        <ion-title><b>Cuenta</b></ion-title>
-      </ion-card-content>
-    </ion-card>
+    <button id="button" (click) = "playB()">
+      <ion-card >
+        <ion-card-content>
+          <ion-title>Privacidad</ion-title>
+        </ion-card-content>
+      </ion-card>
+    </button>
 
-    <ion-card id="colored-box1">
-      <ion-card-content>
-        <ion-title><b>Notificaciones</b></ion-title>
-      </ion-card-content>
-    </ion-card>
+    <button id="button" (click) = "playC()">
+      <ion-card >
+        <ion-card-content>
+          <ion-title>Cuenta</ion-title>
+        </ion-card-content>
+      </ion-card>
+    </button>
+
+    <button id="button" (click) = "playD()">
+      <ion-card >
+        <ion-card-content>
+          <ion-title>Notificaciones</ion-title>
+        </ion-card-content>
+      </ion-card>
+    </button>
 
 
 

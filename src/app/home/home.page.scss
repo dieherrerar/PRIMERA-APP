@@ -40,12 +40,15 @@
   font-size: 70px;
 }
 
-.blurred-card {
 
+
+
+.blurred-card{
   backdrop-filter: blur(10px); /* Ajusta el nivel de desenfoque */
   background-color: rgba(255, 255, 255, 0.158); /* Ajusta la opacidad de fondo */
   padding: 16px; /* Opcional: agrega padding para separar la card del borde */
 }
+
 
 .boton-empecemos{
   margin-left: 5%;
@@ -54,4 +57,8 @@
   margin-top: 40%;
   backdrop-filter: blur(10px); /* Ajusta el nivel de desenfoque */
   background-color: rgba(255, 255, 255, 0.158); /* Ajusta la opacidad de fondo */
+}
+
+.parrafo{
+  color: white;
 }
