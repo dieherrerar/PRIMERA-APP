@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
+import {  Router } from '@angular/router';
 
 
 
@@ -8,24 +9,61 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './publicacion.page.html',
   styleUrls: ['./publicacion.page.scss'],
 })
-export class PublicacionPage {
-  // Ejemplo de datos de publicación para prueba
-  publicacion = {
-    title: 'Título de Ejemplo',
-    image: 'https://via.placeholder.com/600x400', // Imagen de ejemplo
-    ingredients: 'Ingredientes de ejemplo',
-    steps: 'Pasos de ejemplo',
-  };
+export class PublicacionPage implements OnInit {
 
-  likePublication() {
-    console.log('Publicación marcada como favorita');
+  comentario:string=""
+
+  constructor(public mensaje:ToastController, private route:Router,public alerta:AlertController) { }
+
+  async mensajeLike() {
+    const toast = await this.mensaje.create({
+      message: 'Publicación añadida a favoritos',
+      duration: 2000
+    });
+    toast.present();
+  }
+  async MensajeGuardada() {
+    const toast = await this.mensaje.create({
+      message: 'Publicación guardada',
+      duration: 2000
+    });
+    toast.present();
   }
 
-  savePublication() {
-    console.log('Publicacion guardada');
+  async MensajeComentario() {
+    const toast = await this.mensaje.create({
+      message: 'Comentario Enviado',
+      duration: 2000
+    });
+    toast.present();
   }
 
-  submitComment() {
-    console.log('Comentario enviado');
+  async MensajeComentarioError() {
+    const toast = await this.mensaje.create({
+      message: 'No se puede enviar un comentario vacío',
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  Like(){
+    this.mensajeLike()
+  }
+
+  Guardado(){
+    this.MensajeGuardada()
+  }
+
+  Comentar(){
+    if(this.comentario===""){
+      console.log("No se puede enviar un comentario vacío")
+      this.MensajeComentarioError()
+    }
+    else{
+      console.log("Comentario enviado")
+      this.MensajeComentario()
+    }
+  }
+  ngOnInit() {
   }
 }

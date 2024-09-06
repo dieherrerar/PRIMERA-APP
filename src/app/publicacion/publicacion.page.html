@@ -11,7 +11,7 @@
   <!-- Sección del Título -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ publicacion.title || 'Título de la Publicación' }}</ion-card-title>
+      <ion-card-title>Pastel De Choclo</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <!-- Imagen de la Publicación -->
@@ -24,7 +24,9 @@
       <ion-card-title>Ingredientes</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>{{ publicacion.ingredients || 'Ingredientes no disponibles' }}</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, 
+        rem magni accusantium expedita sunt velit. Quasi, dolorem quaerat alias eveniet, 
+        corrupti nemo minus minima dignissimos quibusdam nisi dolor explicabo fugit.</p>
     </ion-card-content>
   </ion-card>
 
@@ -34,7 +36,10 @@
       <ion-card-title>Pasos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>{{ publicacion.steps || 'Pasos no disponibles' }}</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Dolor illo quo ipsum voluptate sapiente ut officiis suscipit sunt saepe 
+        veniam praesentium, est dolores ratione. Aliquid, maiores! Saepe dolor ipsam praesentium.
+      </p>
     </ion-card-content>
   </ion-card>
 
@@ -50,8 +55,8 @@
   <!-- Botones de Acción -->
   <ion-card>
     <ion-card-content>
-      <ion-button expand="full" color="primary" (click)="likePublication()">Dar Like</ion-button>
-      <ion-button expand="full" (click)="savePublication()">Guardar</ion-button>
+      <ion-button expand="full" color="primary" (click)="Like()">Like</ion-button>
+      <ion-button expand="full" (click)="Guardado()">Guardar</ion-button>
     </ion-card-content>
   </ion-card>
 
@@ -62,9 +67,9 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input placeholder="Escribe tu comentario" (keyup.enter)="submitComment()"></ion-input>
+        <ion-input label="Comentario"  [(ngModel)]="comentario" name="comentario" placeholder="Escribe tu comentario" required></ion-input>
       </ion-item>
-      <ion-button expand="full" color="primary" (click)="submitComment()">Enviar Comentario</ion-button>
+      <ion-button expand="full" color="primary" (click)="Comentar()">Enviar Comentario</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
