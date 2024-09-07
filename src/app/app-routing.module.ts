@@ -46,6 +46,11 @@ const routes: Routes = [
   }
   ,
   {
+    path: 'privacidad',
+    loadChildren: () => import('./privacidad/privacidad.module').then( m => m.PrivacidadPageModule)
+  }
+  ,
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -54,7 +59,9 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'home'
-  }
+  },
+
+
 ];
 
 @NgModule({

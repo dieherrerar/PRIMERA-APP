@@ -24,7 +24,7 @@ export class ConfiguracionPage {
       .create()
       .addElement(this.cardElements.get(0)!.nativeElement)
       .fill('none')
-      .duration(1000)
+      .duration(900)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '0.5' },
         { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
@@ -35,7 +35,7 @@ export class ConfiguracionPage {
       .create()
       .addElement(this.cardElements.get(1)!.nativeElement)
       .fill('none')
-      .duration(1000)
+      .duration(900)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '0.5' },
         { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
