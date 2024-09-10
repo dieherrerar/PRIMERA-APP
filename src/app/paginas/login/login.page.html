@@ -2,6 +2,9 @@
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>Iniciar Sesión</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
@@ -21,9 +24,26 @@
         </ion-button>
         
         <ion-button expand="block" color="secondary" (click)="navigateToRegister()">
-          Crear una cuenta
+          CREAR CUENTA
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-button id="botonlogin" expand="block" class="login-button" (click)="ingresar()">
+          FACEBOOK
+        </ion-button>
+        
+        <ion-button expand="block" color="secondary" (click)="navigateToRegister()">
+          GOOGLE
+        </ion-button>
+
+        <ion-button  expand="block" color="dark" >
+          <img src='https://pngimg.com/d/apple_logo_PNG19680.png' alt="Icono" style="width:16px; height:20px;" margin="50%">
         </ion-button>
       </ion-card-content>
     </ion-card>
   </ion-content>
+
 </ion-app>

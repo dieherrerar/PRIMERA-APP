@@ -13,11 +13,12 @@
   line-height: 26px;
 }
 
-#container p {
-  font-size: 16px;
+ion-card-content p {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 22px;
 
-  color: #8c8c8c;
+  color: #ffffffef;
 
   margin: 0;
 }
@@ -44,8 +45,8 @@
 
 
 .blurred-card{
-  backdrop-filter: blur(10px); /* Ajusta el nivel de desenfoque */
-  background-color: rgba(255, 255, 255, 0.158); /* Ajusta la opacidad de fondo */
+  backdrop-filter: blur(5px); /* Ajusta el nivel de desenfoque */
+  background-color: rgba(255, 255, 255, 0.027); /* Ajusta la opacidad de fondo */
   padding: 16px; /* Opcional: agrega padding para separar la card del borde */
 }
 
@@ -55,8 +56,8 @@
   margin-right: 5%;
  
   margin-top: 40%;
-  backdrop-filter: blur(10px); /* Ajusta el nivel de desenfoque */
-  background-color: rgba(255, 255, 255, 0.158); /* Ajusta la opacidad de fondo */
+  backdrop-filter: blur(5px); /* Ajusta el nivel de desenfoque */
+  background-color: rgba(255, 255, 255, 0.027); /* Ajusta la opacidad de fondo */
 }
 
 .parrafo{

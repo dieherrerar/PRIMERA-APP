@@ -9,53 +9,55 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  registroForm: FormGroup;
+  usuario: string = "";
+  contrasenna: string = "";
+  correo : string ="";
 
   constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private toastController: ToastController,
-    private alertController: AlertController
-  ) {
-    this.registroForm = this.fb.group({
-      nombre: ['', Validators.required],
-      usuario: ['', [Validators.required, Validators.email]],
-      contrasenna: ['', [Validators.required, Validators.minLength(6)]]
-    });
-  }
+    private route: Router,
+    private mensaje: ToastController,
+  ) {}
 
   ngOnInit() {}
 
-  async registrar() {
-    if (this.registroForm.valid) {
-      const { nombre, usuario, contrasenna } = this.registroForm.value;
-      console.log('Nombre:', nombre);
-      console.log('Usuario:', usuario);
-      console.log('Contraseña:', contrasenna);
-
-
-      this.router.navigate(['/login']);
-      await this.showToast('Registro exitoso. Por favor, inicia sesión.');
-    } else {
-      await this.showAlert('Por favor, complete todos los campos requeridos.');
-    }
-  }
-
-  async showAlert(message: string) {
-    const alert = await this.alertController.create({
+  async Alerta() {
+    const alert = await this.mensaje.create({
       header: 'Error',
-      message: message,
-      buttons: ['Aceptar']
+      message: 'Los campos no deben estar vacíos.',
+      duration: 2000
     });
-
+  
     await alert.present();
   }
 
-  async showToast(message: string) {
-    const toast = await this.toastController.create({
-      message: message,
+  async ContrasenaInvalida() {
+    const toast = await this.mensaje.create({
+      message: 'La contraseña debe ser mayor a 8 dígitos.',
       duration: 2000
     });
     toast.present();
+  }
+
+  async Exito() {
+    const toast = await this.mensaje.create({
+      message: 'Registro exitoso.',
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  Registrar() {
+    if (this.usuario === "" || this.contrasenna === "" || this.correo==="") {
+      this.Alerta();
+    } 
+    else if (this.contrasenna.length <8){
+      console.log("La contraseña debe ser mayor a 8 dígitos.");
+      this.ContrasenaInvalida();
+    }
+    else {
+      console.log("Inicio de sesión exitoso");
+      this.Exito();
+      this.route.navigate(["/inicio"]);
+    }
   }
 }
