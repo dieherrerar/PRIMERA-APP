@@ -22,6 +22,14 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
+  async Error() {
+    const toast = await this.mensaje.create({
+      message: 'La contraseña debe tener mínimo 8 caractéres',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   async Alerta() {
     const alert = await this.alerta.create({
       header: 'Error',
@@ -35,7 +43,11 @@ export class LoginPage implements OnInit {
   ingresar() {
     if (this.usuario === "" || this.contrasenna === "") {
       this.Alerta();
-    } else {
+    }
+    else if(this.contrasenna.length<8){
+      this.Error();
+    }
+    else {
       console.log("Inicio de sesión exitoso");
       this.Exito();
       this.route.navigate(["/inicio"]);
