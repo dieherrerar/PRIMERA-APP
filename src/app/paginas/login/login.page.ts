@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ export class LoginPage implements OnInit {
   usuario: string = "";
   contrasenna: string = "";
 
-  constructor(public mensaje: ToastController, private route: Router, public alerta: AlertController) { }
+  constructor(public mensaje: ToastController, private route: Router, public alerta: AlertController, private storage : Storage) { }
 
   async Exito() {
     const toast = await this.mensaje.create({
@@ -48,6 +50,7 @@ export class LoginPage implements OnInit {
       this.Error();
     }
     else {
+      this.storage.set("usuario", this.usuario)
       console.log("Inicio de sesión exitoso");
       this.Exito();
       this.route.navigate(["/inicio"]);
@@ -58,7 +61,8 @@ export class LoginPage implements OnInit {
     this.route.navigate(["/registro"]);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const storage = await this.storage.create();
   }
 
 }
