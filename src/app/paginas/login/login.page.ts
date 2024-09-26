@@ -51,6 +51,7 @@ export class LoginPage implements OnInit {
     }
     else {
       this.storage.set("usuario", this.usuario)
+      this.storage.set("SessionId", true)
       console.log("Inicio de sesión exitoso");
       this.Exito();
       this.route.navigate(["/inicio"]);
