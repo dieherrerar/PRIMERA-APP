@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PublicacionPageRoutingModule } from './publicacion-routing.module';
 
 import { PublicacionPage } from './publicacion.page';
+import { CompartirModule } from '../modulos/compartir/compartir.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PublicacionPageRoutingModule
+    PublicacionPageRoutingModule,
+    CompartirModule
   ],
   declarations: [PublicacionPage]
 })

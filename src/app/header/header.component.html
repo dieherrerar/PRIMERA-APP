@@ -1,0 +1,27 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{titulo}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item route.navigate=([/buscador]) routerDirection="root">
+        <ion-icon name="search-outline" slot="start"></ion-icon>
+        Buscador
+      </ion-item>
+      <ion-item routerLink="/configuracion" routerDirection="root">
+        <ion-icon name="settings-outline" slot="start"></ion-icon>
+        Configuración
+      </ion-item>
+      <ion-item routerLink="/crearpublicacion" routerDirection="root">
+        <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        Crear Publicación
+      </ion-item>
+      <ion-item routerLink="/home" routerDirection="root">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Cerrar sesión
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

@@ -19,7 +19,7 @@ export class AuthGuard{
     const logueado = await this.storage.get("SessionId");
 
     if(logueado){
-      return this.route.createUrlTree(['/inicio']);
+      return true;
     }
     else{
       return this.route.createUrlTree(['/login']);
