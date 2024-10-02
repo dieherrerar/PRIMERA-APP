@@ -10,12 +10,11 @@
 <ion-content>
   <ion-searchbar
     placeholder="Buscar"
-    (ionInput)="onSearch($event)"
   ></ion-searchbar>
 
-  <ion-list [inset]="true">
-    <ion-item *ngFor="let item of filteredItems" [routerLink]="[item.link]">
-      <ion-label>{{ item.title }}</ion-label>
+  <ion-list>
+    <ion-item  (click)="navigateTo('/publicacion')" >
+      <ion-label> Publicación </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

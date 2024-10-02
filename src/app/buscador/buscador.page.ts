@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscador',
@@ -6,28 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscador.page.scss'],
 })
 export class BuscadorPage implements OnInit {
-  items: Array<{ title: string; link: string }> = [];
-  filteredItems: Array<{ title: string; link: string }> = [];
+  constructor(private router : Router) {}
 
-  constructor() {}
-
-  ngOnInit() {
-    // Inicializar la lista de elementos
-    this.items = [
-      { title: 'Publicación 1', link: '/publicacion/1' },
-      { title: 'Publicación 2', link: '/publicacion/2' },
-      { title: 'Perfil 1', link: '/perfil/1' },
-      { title: 'Perfil 2', link: '/perfil/2' },
-    ];
-
-    // Inicializar los elementos filtrados
-    this.filteredItems = this.items;
+  navigateTo(path: string) {
+    this.router.navigate([path]);
   }
+  ngOnInit() {}
 
-  onSearch(event: any) {
-    const query = event.detail.value.toLowerCase();
-    this.filteredItems = this.items.filter(item =>
-      item.title.toLowerCase().includes(query)
-    );
-  }
+
 }

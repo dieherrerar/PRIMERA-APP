@@ -1,72 +1,74 @@
 <ion-app>
 
+  <app-menu [titulo] = "'Menú'"></app-menu>
+
+<ion-content id="main-content">
   <app-header [titulo]="'Publicación'"></app-header>
+  <ion-content class="ion-padding">
+    <!-- Sección del Título -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pastel De Choclo</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Imagen de la Publicación -->
+      </ion-card-content>
+    </ion-card>
 
+    <!-- Sección de Ingredientes -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ingredientes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, 
+          rem magni accusantium expedita sunt velit. Quasi, dolorem quaerat alias eveniet, 
+          corrupti nemo minus minima dignissimos quibusdam nisi dolor explicabo fugit.</p>
+      </ion-card-content>
+    </ion-card>
 
-<ion-content class="ion-padding">
-  <!-- Sección del Título -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Pastel De Choclo</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <!-- Imagen de la Publicación -->
-    </ion-card-content>
-  </ion-card>
+    <!-- Sección de Pasos -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pasos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          Dolor illo quo ipsum voluptate sapiente ut officiis suscipit sunt saepe 
+          veniam praesentium, est dolores ratione. Aliquid, maiores! Saepe dolor ipsam praesentium.
+        </p>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Sección de Ingredientes -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Ingredientes</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, 
-        rem magni accusantium expedita sunt velit. Quasi, dolorem quaerat alias eveniet, 
-        corrupti nemo minus minima dignissimos quibusdam nisi dolor explicabo fugit.</p>
-    </ion-card-content>
-  </ion-card>
+    <!-- Sección de Video -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Video</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Sección de Pasos -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Pasos</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Dolor illo quo ipsum voluptate sapiente ut officiis suscipit sunt saepe 
-        veniam praesentium, est dolores ratione. Aliquid, maiores! Saepe dolor ipsam praesentium.
-      </p>
-    </ion-card-content>
-  </ion-card>
+    <!-- Botones de Acción -->
+    <ion-card>
+      <ion-card-content>
+        <ion-button expand="full" color="primary" (click)="Like()">Like</ion-button>
+        <ion-button expand="full" (click)="Guardado()">Guardar</ion-button>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Sección de Video -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Video</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Botones de Acción -->
-  <ion-card>
-    <ion-card-content>
-      <ion-button expand="full" color="primary" (click)="Like()">Like</ion-button>
-      <ion-button expand="full" (click)="Guardado()">Guardar</ion-button>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Comentario -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Comentario</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-input label="Comentario"  [(ngModel)]="comentario" name="comentario" placeholder="Escribe tu comentario" required></ion-input>
-      </ion-item>
-      <ion-button expand="full" color="primary" (click)="Comentar()">Enviar Comentario</ion-button>
-    </ion-card-content>
-  </ion-card>
+    <!-- Comentario -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Comentario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-input label="Comentario"  [(ngModel)]="comentario" name="comentario" placeholder="Escribe tu comentario" required></ion-input>
+        </ion-item>
+        <ion-button expand="full" color="primary" (click)="Comentar()">Enviar Comentario</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>
 </ion-app>

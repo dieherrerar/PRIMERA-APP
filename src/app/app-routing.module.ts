@@ -31,11 +31,11 @@ const routes: Routes = [
     loadChildren: () => import('./buscador/buscador.module').then(m => m.BuscadorPageModule)
   },
   {
-    path: 'publicacion/:id',
+    path: 'publicacion',
     loadChildren: () => import('./publicacion/publicacion.module').then(m => m.PublicacionPageModule)
   },
   {
-    path: 'perfil/:id',
+    path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then(m => m.PerfilPageModule)
   },
   {

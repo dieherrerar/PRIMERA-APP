@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { InicioPageRoutingModule } from './inicio-routing.module';
 import { InicioPage } from './inicio.page';
-import { HeaderComponent } from '../header/header.component';
 import { CompartirModule } from '../modulos/compartir/compartir.module';
 
 @NgModule({
